@@ -19,8 +19,10 @@ public class Pantalla extends javax.swing.JFrame {
     dni, nombre, apellido, fecha de nacimiento, teléfono y dirección
     utilizar 1 vector para cada dato 
      */
+    // Constante del tamaño maximo de los vectores
     static final int MAX = 10;
 
+    // cada vector con su tipo de dato para modelar los campos que se llenan en la agenda
     static int vectorDni[] = new int[MAX];
     static String vectorNombre[] = new String[MAX];
     static String vectorApellido[] = new String[MAX];
@@ -34,6 +36,7 @@ public class Pantalla extends javax.swing.JFrame {
     public Pantalla() {
         initComponents();
         this.setLocationRelativeTo(null);
+        // inicializo el indice para que sea visible en 0 
         txtIndice.setText(Integer.toString(indice));
     }
 
@@ -266,6 +269,7 @@ public class Pantalla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Boton atras , retroceder 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         
         if (indice >=0 && indice <10 ) {
@@ -292,6 +296,12 @@ public class Pantalla extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    /*
+    Boton Guardar , para llenar los vectores y tener la informacion 
+    no contempla el guardado si no se llenan todos los campos
+    no guarda campos nulos o vacios
+    */
+        
     private void btnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrabarActionPerformed
         //requiero el contenido de los textos
         String apellido = txtApellido.getText();
@@ -312,6 +322,9 @@ public class Pantalla extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGrabarActionPerformed
 
+    /*
+    Boton adelante para avanzar en la agenda
+    */
     private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
         if (indice >=0 && indice <9 ) {
             indice ++;
@@ -342,9 +355,10 @@ public class Pantalla extends javax.swing.JFrame {
     public static void main(String[] args) {
 
         Pantalla pantalla = new Pantalla();
-        //inicializar los vectores para su utilizacion
+        
         pantalla.setVisible(true);
         
+        //inicializar los vectores para su utilizacion
         for (int i = 0; i < MAX; i++) {
             vectorNombre[i] = "";
             vectorDireccion[i] = "";
