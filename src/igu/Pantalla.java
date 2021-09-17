@@ -271,12 +271,12 @@ public class Pantalla extends javax.swing.JFrame {
 
     //Boton atras , retroceder 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        
-        if (indice >=0 && indice <10 ) {
-            indice --;
+
+        if (indice >= 0 && indice < 10) {
+            indice--;
             //indice
             txtIndice.setText(Integer.toString(indice));
-            if (vectorDni[indice] == 0){
+            if (vectorDni[indice] == 0) {
                 //setear los txt en balnco 
                 txtApellido.setText("");
                 txtNombre.setText("");
@@ -284,7 +284,7 @@ public class Pantalla extends javax.swing.JFrame {
                 txtTelefono.setText("");
                 txtFNacimiento.setText("");
                 txtDireccion.setText("");
-            }else{
+            } else {
                 //trae datos
                 txtApellido.setText(vectorApellido[indice]);
                 txtNombre.setText(vectorNombre[indice]);
@@ -293,15 +293,15 @@ public class Pantalla extends javax.swing.JFrame {
                 txtFNacimiento.setText(vectorFechaNacimiento[indice]);
                 txtDireccion.setText(vectorDireccion[indice]);
             }
-        } 
+        }
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     /*
     Boton Guardar , para llenar los vectores y tener la informacion 
     no contempla el guardado si no se llenan todos los campos
     no guarda campos nulos o vacios
-    */
-        
+     */
+
     private void btnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrabarActionPerformed
         //requiero el contenido de los textos
         String apellido = txtApellido.getText();
@@ -324,13 +324,13 @@ public class Pantalla extends javax.swing.JFrame {
 
     /*
     Boton adelante para avanzar en la agenda
-    */
+     */
     private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
-        if (indice >=0 && indice <9 ) {
-            indice ++;
+        if (indice >= 0 && indice < 9) {
+            indice++;
             //indice
-            txtIndice.setText(Integer.toString(indice)); 
-            if (vectorDni[indice] == 0){
+            txtIndice.setText(Integer.toString(indice));
+            if (vectorDni[indice] == 0) {
                 //setear los txt en balnco 
                 txtApellido.setText("");
                 txtNombre.setText("");
@@ -338,7 +338,7 @@ public class Pantalla extends javax.swing.JFrame {
                 txtTelefono.setText("");
                 txtFNacimiento.setText("");
                 txtDireccion.setText("");
-            }else{
+            } else {
                 //trae datos
                 txtApellido.setText(vectorApellido[indice]);
                 txtNombre.setText(vectorNombre[indice]);
@@ -347,7 +347,7 @@ public class Pantalla extends javax.swing.JFrame {
                 txtFNacimiento.setText(vectorFechaNacimiento[indice]);
                 txtDireccion.setText(vectorDireccion[indice]);
             }
-        } 
+        }
 
     }//GEN-LAST:event_btnAdelanteActionPerformed
 
@@ -355,9 +355,9 @@ public class Pantalla extends javax.swing.JFrame {
     public static void main(String[] args) {
 
         Pantalla pantalla = new Pantalla();
-        
+
         pantalla.setVisible(true);
-        
+
         //inicializar los vectores para su utilizacion
         for (int i = 0; i < MAX; i++) {
             vectorNombre[i] = "";
