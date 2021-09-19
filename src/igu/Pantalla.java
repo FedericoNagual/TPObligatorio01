@@ -271,10 +271,11 @@ public class Pantalla extends javax.swing.JFrame {
 
     //Boton atras , retroceder 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-
-        if (indice >= 0 && indice < 10) {
-            indice--;
-            //indice
+        if (indice >= 0 && indice <= 9) {
+            if (indice != 0){
+                indice--;
+                //indice
+            }
             txtIndice.setText(Integer.toString(indice));
             if (vectorDni[indice] == 0) {
                 //setear los txt en balnco 
@@ -293,7 +294,7 @@ public class Pantalla extends javax.swing.JFrame {
                 txtFNacimiento.setText(vectorFechaNacimiento[indice]);
                 txtDireccion.setText(vectorDireccion[indice]);
             }
-        }
+        }              
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     /*
@@ -311,6 +312,7 @@ public class Pantalla extends javax.swing.JFrame {
         int telefono = Integer.parseInt(txtTelefono.getText());
         String fechaNacimiento = txtFNacimiento.getText();
 
+        //Actualizar los vectores con sus respectivos datos
         vectorApellido[indice] = apellido;
         vectorDireccion[indice] = direccion;
         vectorDni[indice] = dni;
@@ -318,7 +320,6 @@ public class Pantalla extends javax.swing.JFrame {
         vectorNombre[indice] = nombre;
         vectorTelefono[indice] = telefono;
 
-        //llamar al metodo para guardar los datos con su respectivo indice
 
     }//GEN-LAST:event_btnGrabarActionPerformed
 
@@ -326,9 +327,11 @@ public class Pantalla extends javax.swing.JFrame {
     Boton adelante para avanzar en la agenda
      */
     private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
-        if (indice >= 0 && indice < 9) {
-            indice++;
-            //indice
+        if (indice >= 0 && indice <= 9) {
+            if (indice != 9){
+                indice++;
+                //indice
+            }
             txtIndice.setText(Integer.toString(indice));
             if (vectorDni[indice] == 0) {
                 //setear los txt en balnco 
@@ -348,12 +351,12 @@ public class Pantalla extends javax.swing.JFrame {
                 txtDireccion.setText(vectorDireccion[indice]);
             }
         }
-
     }//GEN-LAST:event_btnAdelanteActionPerformed
 
     //Metodo main general
     public static void main(String[] args) {
 
+        //creo la pantalla y la hago visible
         Pantalla pantalla = new Pantalla();
 
         pantalla.setVisible(true);
